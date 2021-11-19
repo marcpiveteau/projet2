@@ -47,6 +47,7 @@ fig1 = px.bar(tablegenre,x='genres', y="titre",color='genres',labels={"titre" : 
 fig1.update_layout(
      title={'text': "films par genres sur la periode",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+	title_font_size= 25,
     title_font_color="#FA0087")
 st.plotly_chart(fig1)
 
@@ -54,6 +55,7 @@ fig12 = px.pie(tablegenre, values= 'titre', names='genres')
 fig12.update_layout(
      title={'text': "pourcentage par genres sur la periode",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+	title_font_size= 25,
     title_font_color="#FA0087")
 st.plotly_chart(fig12)
 
@@ -64,18 +66,21 @@ if choixstatgenr=='moyenne des notes':
 	fig4.update_layout(
      title={'text': "moyenne des notes par genres",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+		title_font_size= 25,
     title_font_color="#FA0087")
 if choixstatgenr=='durée moyenne des films':
 	fig4 = px.bar(tablegenre2, x='genres', y="durée_du_film",color='genres',labels={"durée_du_film" : "moyenne des durées"})
 	fig4.update_layout(
      title={'text': "moyenne des durées par genres",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+		title_font_size= 25,
     title_font_color="#FA0087")
 if choixstatgenr=='nombres de vote en moyenne':
 	fig4 = px.bar(tablegenre2, x='genres', y="numVotes",color='genres',labels={"numVotes" : "moyenne de nombres de votes"})
 	fig4.update_layout(
      title={'text': "moyenne du nombres de votes par genres( attention celle-ci est faussé suivant la selection)",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+		title_font_size= 25,
     title_font_color="#FA0087")
 
 st.plotly_chart(fig4)
@@ -101,6 +106,7 @@ fig2 = px.bar(tabledirector3,x='Réalisateur', y='notes_du_film',color='Réalisa
 fig2.update_layout(
      title={'text': "classement des réalisateurs",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+	title_font_size= 25,
     title_font_color="#FA0087")
 st.plotly_chart(fig2)
 
@@ -110,6 +116,7 @@ if choixstat=='moyenne des notes':
 	fig4.update_layout(
      title={'text': "notes de ces réalisateurs et nombres moyen de votes par films",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     	title_font_family="Times New Roman",
+		title_font_size= 25,
     	title_font_color="#FA0087")
 	st.plotly_chart(fig4)
 
@@ -132,6 +139,7 @@ fig3 = px.bar(tableacteur3,x='acteur_actrisse', y='notes_du_film', title="classe
 fig3.update_layout(
      title={'text': "classement des acteurs ou actrices",'x':0.5,'xanchor': 'center','yanchor': 'top'},
     title_font_family="Times New Roman",
+	title_font_size= 25,
     title_font_color="#FA0087")
 st.plotly_chart(fig3)
 
