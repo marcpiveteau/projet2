@@ -26,6 +26,7 @@ st.markdown("![Alt Text](https://raw.githubusercontent.com/marcpiveteau/projet2/
 
 listevote = [i for i in range(0,2600000,100000)]
 listevote.append(1000)
+listevote.append(10000)
 listevote=sorted(listevote)
 today = datetime.date.today()
 premieredate = datetime.date(1910, 1, 1)
