@@ -16,15 +16,17 @@ link2="https://raw.githubusercontent.com/marcpiveteau/projet2/main/tableactexplo
 tableact =pd.read_csv(link2)
 
 
-st.title('Bienvenue sur Nanflix!')
+st.title('Bienvenue sur MARCFLIX!')
 
 
-st.markdown("![Alt Text](https://github.com/marcpiveteau/projet2/blob/main/cinemananflix.jpg?raw=true)")
+st.markdown("![Alt Text](https://raw.githubusercontent.com/marcpiveteau/projet2/main/cinemamarcflix.jpg)")
 
 
 
 
 listevote = [i for i in range(0,2600000,100000)]
+listevote.append(1000)
+listevote=sorted(listevote)
 today = datetime.date.today()
 premieredate = datetime.date(1910, 1, 1)
 start_date=st.date_input('date de début:', premieredate)
