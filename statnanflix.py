@@ -104,6 +104,15 @@ fig2.update_layout(
     title_font_color="#FA0087")
 st.plotly_chart(fig2)
 
+if choixstat=='moyenne des notes':
+	fig4 = px.scatter(tabledirector3,x= "Réalisateur", y= 'notes_du_film',
+	         size='numVotes', size_max=60, color ='numVotes',labels={"notes_du_film" : "moyenne des notes"})
+	fig4.update_layout(
+     title={'text': "notes de ces réalisateurs et nombres moyen de votes par films",'x':0.5,'xanchor': 'center','yanchor': 'top'},
+    	title_font_family="Times New Roman",
+    	title_font_color="#FA0087")
+	st.plotly_chart(fig4)
+
 nbacteur = [i for i in range(1,21)]
 nbchact = st.selectbox("combien d'acteur et actrice veux tu voir ? ",nbacteur)
 choixstat1= st.selectbox('que voulez vous voir ?',['moyenne des notes','nombres de film joué'])
@@ -128,7 +137,7 @@ st.plotly_chart(fig3)
 
 
 
-genreselectionner=st.selectbox('selectionner un gerne pour voir la liste des films sur cette periode', ['Action','Adult','Adventure','Animation','Biography','Comedy','Crime','Documentary','Drama','Family','Fantasy','Film-Noir','History','Horror','Music','Musical','Mystery','News','Romance','Sci-Fi','Sport','Thriller','War','Western'])
+genreselectionner=st.selectbox('selectionner un genre pour voir la liste des films de cette periode et de ce mini de nombre de votes ', ['Action','Adult','Adventure','Animation','Biography','Comedy','Crime','Documentary','Drama','Family','Fantasy','Film-Noir','History','Horror','Music','Musical','Mystery','News','Romance','Sci-Fi','Sport','Thriller','War','Western'])
 
 film = jaugegenreannée[jaugegenreannée['genres']==genreselectionner]
 film =film[['année_du_film','genres','titre','Réalisateur','notes_du_film','numVotes', 'scenariste','acteur_actrisse']]
