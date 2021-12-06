@@ -33,7 +33,7 @@ premieredate = datetime.date(1910, 1, 1)
 start_date=st.date_input('date de début:', premieredate)
 end_date = st.date_input('Date de fin :')
 nombredevote = st.selectbox('nombre de votes mini',listevote)
-st.write("vous avez selectionner de l'année:", start_date, "à l'année", end_date, " avec au minimum ", nombredevote," de votes")
+st.write("vous avez selectionner de l'année:", start_date, "à l'année", end_date, " avec au minimum ", nombredevote," votes")
 
 tablegraph= table[[ 'année_du_film', 'durée_du_film', 'genres', 'titre', 'Réalisateur','notes_du_film', 'numVotes', 'scenariste', 'acteur_actrisse']]
 tablegraph['genres'] = tablegraph['genres'].str.split(',')
@@ -60,7 +60,7 @@ fig12.update_layout(
 st.plotly_chart(fig12)
 
 tablegenre2 =jaugegenreannée.groupby(by='genres').mean().reset_index()
-choixstatgenr = st.selectbox('que voulez vous voir ?',['moyenne des notes','durée moyenne des films','nombres de vote en moyenne'])
+choixstatgenr = st.selectbox('que voulez vous voir ?',['moyenne des notes','durée moyenne des films','nombres de votes en moyenne'])
 if choixstatgenr=='moyenne des notes':
 	fig4 = px.bar(tablegenre2, x='genres', y="notes_du_film",color='genres',labels={"notes_du_film" : "moyenne des notes"})
 	fig4.update_layout(
@@ -75,7 +75,7 @@ if choixstatgenr=='durée moyenne des films':
     title_font_family="Times New Roman",
 		title_font_size= 25,
     title_font_color="#FA0087")
-if choixstatgenr=='nombres de vote en moyenne':
+if choixstatgenr=='nombres de votes en moyenne':
 	fig4 = px.bar(tablegenre2, x='genres', y="numVotes",color='genres',labels={"numVotes" : "moyenne de nombres de votes"})
 	fig4.update_layout(
      title={'text': "moyenne du nombres de votes par genres( attention celle-ci est faussé suivant la selection)",'x':0.5,'xanchor': 'center','yanchor': 'top'},
